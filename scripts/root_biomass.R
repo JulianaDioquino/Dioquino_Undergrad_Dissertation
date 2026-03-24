@@ -67,3 +67,4 @@ dunn.test(root_morphology$pft_biomass, root_morphology$treatment, method = "bonf
 shrub <-  root_morphology %>%
   filter(functional_type_biomass == "shrub_biomass") 
 dunn.test(root_morphology$pft_biomass, root_morphology$treatment, method = "bonferroni")
+
