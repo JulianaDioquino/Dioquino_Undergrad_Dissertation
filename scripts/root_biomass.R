@@ -7,19 +7,19 @@ root_data <- read.csv(file = "data_raw/branch_root_data.csv") %>%
   mutate(treatment = factor(treatment,
                             levels = c("control", "heatwave", "extended"),
                             labels = c("Control", "Heat wave", "Extended season")))
-str(root_data)
-root_data$thin_white_branched <- as.numeric(root_data$thin_white_branched)
-root_data$thin_white_unbranched <- as.numeric(root_data$thin_white_unbranched)
-root_data$thick_white_unbranched <- as.numeric(root_data$thin_white_unbranched)
-root_data$thin_beige_branched <- as.numeric(root_data$thin_beige_branched)
-root_data$thin_beige_unbranched <- as.numeric(root_data$thin_beige_unbranched)
-root_data$thick_beige_unbranched <- as.numeric(root_data$thick_beige_unbranched)
-root_data$thin_brown_branched <- as.numeric(root_data$thin_brown_branched )
-root_data$thin_brown_unbranched <- as.numeric(root_data$thin_brown_unbranched )
-root_data$thick_brown_unbranched <- as.numeric(root_data$thick_brown_unbranched )
-root_data$thin_black_branched  <- as.numeric(root_data$thin_black_branched)
-root_data$thin_black_unbranched  <- as.numeric(root_data$thin_black_unbranched)
-root_data$thick_black_unbranched  <- as.numeric(root_data$thick_black_unbranched)
+      str(root_data)
+      root_data$thin_white_branched <- as.numeric(root_data$thin_white_branched)
+      root_data$thin_white_unbranched <- as.numeric(root_data$thin_white_unbranched)
+      root_data$thick_white_unbranched <- as.numeric(root_data$thin_white_unbranched)
+      root_data$thin_beige_branched <- as.numeric(root_data$thin_beige_branched)
+      root_data$thin_beige_unbranched <- as.numeric(root_data$thin_beige_unbranched)
+      root_data$thick_beige_unbranched <- as.numeric(root_data$thick_beige_unbranched)
+      root_data$thin_brown_branched <- as.numeric(root_data$thin_brown_branched )
+      root_data$thin_brown_unbranched <- as.numeric(root_data$thin_brown_unbranched )
+      root_data$thick_brown_unbranched <- as.numeric(root_data$thick_brown_unbranched )
+      root_data$thin_black_branched  <- as.numeric(root_data$thin_black_branched)
+      root_data$thin_black_unbranched  <- as.numeric(root_data$thin_black_unbranched)
+      root_data$thick_black_unbranched  <- as.numeric(root_data$thick_black_unbranched)
 
 root_morphology <- root_data %>%
   pivot_longer(cols = shrub_biomass:graminoid_biomass,
@@ -27,10 +27,7 @@ root_morphology <- root_data %>%
                values_to = "pft_biomass") %>%
   filter(pft_biomass != "NA")
 
-
-
-
-# root biomass ~ functional type by treatment
+# root biomass ~ functional type by treatment graph
 ggplot(data = root_morphology, aes(x = treatment, y = pft_biomass, fill = treatment)) +
   geom_boxplot(alpha = 0.8) +
   facet_grid(col = vars(functional_type_biomass),
@@ -56,8 +53,7 @@ ggplot(data = root_morphology, aes(x = treatment, y = pft_biomass, fill = treatm
         panel.spacing = unit(1, "lines"),
           panel.border = element_rect(color = "black", fill = NA, size = 1))
 
-
-
+# root biomass ~ functional type by treatment analysis
 root_morphology %>%
   group_by(functional_type_biomass) %>%
   summarise(p_value = kruskal.test(pft_biomass ~ treatment)$p.value)
@@ -69,3 +65,4 @@ dunn.test(root_morphology$pft_biomass, root_morphology$treatment, method = "bonf
 shrub <-  root_morphology %>%
   filter(functional_type_biomass == "shrub_biomass") 
 dunn.test(root_morphology$pft_biomass, root_morphology$treatment, method = "bonferroni")
+
