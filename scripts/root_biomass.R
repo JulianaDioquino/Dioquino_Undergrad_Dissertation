@@ -58,11 +58,11 @@ root_morphology %>%
   group_by(functional_type_biomass) %>%
   summarise(p_value = kruskal.test(pft_biomass ~ treatment)$p.value)
 
-graminoid <-  root_morphology %>%
+graminoid <- root_morphology %>%
   filter(functional_type_biomass == "graminoid_biomass") 
 dunn.test(root_morphology$pft_biomass, root_morphology$treatment, method = "bonferroni")
 
-shrub <-  root_morphology %>%
+shrub <- root_morphology %>%
   filter(functional_type_biomass == "shrub_biomass") 
 dunn.test(root_morphology$pft_biomass, root_morphology$treatment, method = "bonferroni") 
 
