@@ -1,7 +1,4 @@
-# Responses of root growth on experimentally induced climate change treatments
+# The effect of longer growing seasons and heat waves on root biomass between shrub and graminoid plants
 
-This project investigates how climate change conditions, specifically heatwaves and extended growing seasons, affect below-ground plant growth and root architecture.
 
-Using controlled growth chamber experiments, we analyze how plants allocate biomass below ground and how root traits shift under changing environmental conditions.
-
-Testing a commit, pull and push
+Arctic ecosystems are warming rapidly, driving shifts in vegetation structure and carbon cycling. However, below-ground responses to multiple warming drivers, and their consequences for carbon respiration across plant functional types, remain poorly understood. Here, we conducted a controlled growth chamber experiment with tundra mesocosms to test the effects of simulated heat waves and extended growing seasons on root biomass and cumulative CO2 respiration in shrub and graminoid plants. Shrub root biomass increased under longer growing season conditions but showed no clear response to heat waves, whereas graminoids exhibited no consistent response to either treatment. Cumulative CO2 respiration increased under extended growing seasons but not under heat wave conditions. Across all treatments, root biomass was strongly positively associated with CO2 respiration, with no evidence that treatments altered this relationship. These findings suggest that longer growing seasons promote below-ground investment in shrubs and increase carbon respiration. This highlights the extent to which below-ground phenology shapes tundra carbon dynamics and explains shrub expansion in the Arctic.
